@@ -1,0 +1,46 @@
+{
+    "name": "kgoro-ya-dikgading-common",
+    "version": "1.0.0",
+    "description": "Library containing shared models and functionality",
+    "author": "Tebogo Christopher Seshibe",
+    "license": "ISC",
+    "type": "commonjs",
+    "main": "./dist/",
+    "scripts": {
+        "test": "mocha ./**/*.test.ts",
+        "coverage": "nyc npm run test"
+    },
+    "mocha": {
+        "require": [
+            "ts-node/register"
+        ]
+    },
+    "nyc": {
+        "reporter": [
+            "html",
+            "text",
+            "text-summary"
+        ],
+        "require": [
+            "ts-node/register"
+        ],
+        "extension": [
+            ".ts"
+        ],
+        "include": [
+            "./src/**/*.test.ts"
+        ]
+    },
+    "dependencies": {
+        "@google-cloud/firestore": "^4.8.1"
+    },
+    "devDependencies": {
+        "@types/chai": "^4.2.14",
+        "@types/mocha": "^8.2.0",
+        "chai": "^4.2.0",
+        "mocha": "^8.2.1",
+        "nyc": "^15.1.0",
+        "ts-node": "^9.1.1",
+        "typescript": "^4.1.3"
+    }
+}
