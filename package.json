@@ -4,8 +4,8 @@
     "description": "Library containing shared models and functionality",
     "author": "Tebogo Christopher Seshibe",
     "license": "ISC",
-    "type": "commonjs",
-    "main": "./dist/",
+    "main": "src",
+    "private": true,
     "scripts": {
         "test": "mocha ./**/*.test.ts",
         "coverage": "nyc npm run test"
