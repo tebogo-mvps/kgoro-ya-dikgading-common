@@ -30,6 +30,7 @@ jobs:
         run: |
           git checkout -b release/v${{ github.event.inputs.versionName }}
           git tag v${{ github.event.inputs.versionName }}
+          git remove .gitignore
           git add . git
           git commit -m "v${{ github.event.inputs.changelog }}"
           git push origin release/v${{ github.event.inputs.versionName }}
