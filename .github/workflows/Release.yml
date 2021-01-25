@@ -71,7 +71,7 @@ jobs:
     needs: release
     steps:
       - name: Checkout branch
-        run: git checkout release/v${{ github.event.inputs.versionName }}
+        run: git checkout origin release/v${{ github.event.inputs.versionName }}
         
       - name: Remove files
         run: rm tsconfig.json package-lock.json -r                                                                                                                                           .github/workflows
