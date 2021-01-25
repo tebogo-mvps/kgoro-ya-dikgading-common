@@ -1,7 +1,5 @@
-.nyc_output
-coverage
-dist
 node_modules
-*.d.ts
-*.js.map
-*.js
+*.ts
+package-lock.json
+tsconfig.json
+!*.d.ts
