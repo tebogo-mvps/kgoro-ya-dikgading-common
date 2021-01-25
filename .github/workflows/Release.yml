@@ -37,7 +37,6 @@ jobs:
       - name: Build Project
         run: |
           tsc
-          rm ./**/*.ts
         
       - name: Commit changes
         run: |
