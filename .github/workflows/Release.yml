@@ -40,7 +40,7 @@ jobs:
       - name: Commit changes
         run: |
           git add package.json
-          git add src/*
+          git add build/*
           git commit -m 'New release for version "${{ github.event.inputs.versionName }}"'
           
       - name: Push New Release
