@@ -18,6 +18,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         
+      - name: Fetch history
+        run: git fetch --prune --unshallow
+        
       - name: Set Git Details
         run: |
           git config user.name "GitHub Actions"
