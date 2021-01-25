@@ -25,14 +25,13 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Build Project
-        run: |
-          rm .gitignore
-          tsc
+        run: tsc
       - name: Add and Commit
         run: |
           git checkout -b release/v${{ github.event.inputs.versionName }}
           git tag v${{ github.event.inputs.versionName }}
-          git add . git
+          rm .gitignore
+          git add .
           git commit -m "v${{ github.event.inputs.changelog }}"
           git push origin release/v${{ github.event.inputs.versionName }}
         env:
