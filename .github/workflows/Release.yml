@@ -33,19 +33,25 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-
+        
       - name: Install dependencies
         run: npm install
         
+      - name: List Files
+        run: ls -l models
+      - name: List Changes
+        run: git status 
+        
       - name: Build Project
-        run: |
-          ls -l models
-          tsc
-          ls -l models
+        run: tsc
+        
+      - name: List Files
+        run: ls -l models
+      - name: List Changes
+        run: git status 
         
       - name: Commit changes
         run: |
-          ls -l models
           git add .
           git commit -m 'New release for version "${{ github.event.inputs.versionName }}"'
           
