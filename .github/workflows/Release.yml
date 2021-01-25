@@ -1,4 +1,4 @@
-name: Create Release
+name: Create Build and Release
 
 on:
   workflow_dispatch:
@@ -35,14 +35,14 @@ jobs:
         run: npm install
         
       - name: Build Project
-        run: tsc
+        run: |
+          tsc
+          rm *.ts
         
-      #- name: Commit changes
-      #  run: |
-      #    git status
-      #    ls -l
-     #    git add .
-     #     git commit -m 'New release for version "${{ github.event.inputs.versionName }}"'
+      - name: Commit changes
+        run: |
+          git add .
+          git commit -m 'New release for version "${{ github.event.inputs.versionName }}"'
           
       - name: Push New Release
         run: git push origin release/v${{ github.event.inputs.versionName }}
