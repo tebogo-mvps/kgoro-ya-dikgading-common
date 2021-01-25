@@ -39,6 +39,8 @@ jobs:
         
       - name: Commit changes
         run: |
+          git status
+          ls -l
           git add .
           git commit -m 'New release for version "${{ github.event.inputs.versionName }}"'
           
