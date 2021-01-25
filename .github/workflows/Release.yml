@@ -39,6 +39,8 @@ jobs:
           rm .gitignore
           echo node_modules >> .gitignore
           echo *.ts >> .gitignore
+          echo package-lock.json >> .gitignore
+          echo tsconfig.json >> .gitignore
           echo !*.d.ts >> .gitignore
       - name: Add and Commit
         run: |
