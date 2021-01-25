@@ -1,21 +1,44 @@
-name: CI
+name: Create Release
 
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
   workflow_dispatch:
-
+    inputs:
+      versionName:
+        description: 'Version'
+        required: true
+      changelog:
+        description: 'Change Log'
+        required: false
+        default: 'New version release'
 jobs:
-  build:
+  createrelease:    
     runs-on: ubuntu-latest
-
+    
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - name: Release new build
-        uses: technote-space/release-github-actions@v6
+        
+      - name: Create Release Branch
+        run: git checkout -b release/v${{ github.event.inputs.versionName }}
+        
+      - name: Build Project
+        run: tsc
+        
+      - name: Commit changes
+        run: |
+          git add package.json
+          git add dist/*
+          git commit -m 'New release for version "${{ github.event.inputs.versionName }}"'
+          
+      - name: Push New Release
+        run: git push origin release/v${{ github.event.inputs.versionName }
+      
+      - name: Create Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name:  ${{ github.event.inputs.versionName }}
+          release_name: v${{ github.event.inputs.versionName }}
+          draft: false
+          prerelease: false
