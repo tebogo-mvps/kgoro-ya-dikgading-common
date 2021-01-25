@@ -37,11 +37,12 @@ jobs:
       - name: Build Project
         run: tsc
         
-      - name: Commit changes
-        run: |
-          git add package.json
-          git add build/*
-          git commit -m 'New release for version "${{ github.event.inputs.versionName }}"'
+      #- name: Commit changes
+      #  run: |
+      #    git status
+      #    ls -l
+     #    git add .
+     #     git commit -m 'New release for version "${{ github.event.inputs.versionName }}"'
           
       - name: Push New Release
         run: git push origin release/v${{ github.event.inputs.versionName }}
