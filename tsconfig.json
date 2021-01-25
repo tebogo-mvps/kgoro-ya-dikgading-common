@@ -8,8 +8,7 @@
         "outDir": "./dist",
         "esModuleInterop": true,
         "noImplicitAny": true,
-        "strict": true,
-        "watch": true,
+        "strict": true
     },
     "compileOnSave": true
 }
