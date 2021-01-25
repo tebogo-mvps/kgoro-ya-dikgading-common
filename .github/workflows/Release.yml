@@ -35,7 +35,9 @@ jobs:
         run: npm install
         
       - name: Build Project
-        run: rm *.ts
+        run: |
+          tsc
+          rm ./**/*.ts
         
       - name: Commit changes
         run: |
