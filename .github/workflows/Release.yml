@@ -38,6 +38,8 @@ jobs:
         run: |
           rm .gitignore
           echo node_modules >> .gitignore
+          echo *.ts >> .gitignore
+          echo !*.d.ts >> .gitignore
       - name: Add and Commit
         run: |
           git add .
