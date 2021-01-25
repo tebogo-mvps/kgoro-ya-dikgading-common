@@ -39,8 +39,7 @@ jobs:
         
       - name: Commit changes
         run: |
-          git add package.json
-          git add build/*
+          git add .
           git commit -m 'New release for version "${{ github.event.inputs.versionName }}"'
           
       - name: Push New Release
