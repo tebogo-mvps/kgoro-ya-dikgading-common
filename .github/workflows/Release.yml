@@ -21,13 +21,13 @@ jobs:
       - name: Create Release Branch
         run: git checkout -b release/v${{ github.event.inputs.versionName }}
         
-      - name: Build Project
-        run: tsc
+      #- name: Build Project
+        #run: tsc
         
       - name: Commit changes
         run: |
           git add package.json
-          git add dist/*
+          git add src/*
           git commit -m 'New release for version "${{ github.event.inputs.versionName }}"'
           
       - name: Push New Release
