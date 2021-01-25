@@ -26,6 +26,10 @@ jobs:
         run: npm install
       - name: Build Project
         run: tsc
+      - name: Set Github Details
+        run: |
+          git config --global user.email "tsesibe@gmail.com"
+          git config --global user.name "Tebogo Seshibe"
       - name: Add and Commit
         run: |
           git checkout -b release/v${{ github.event.inputs.versionName }}
