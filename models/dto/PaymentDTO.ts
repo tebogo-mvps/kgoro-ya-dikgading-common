@@ -1,9 +1,9 @@
-import ReferenceFieldDTO from "./ReferenceFieldDTO";
+import ReferenceFieldDTO from "./ReferenceFieldDTO"
 
 interface PaymentDTO
 {
     id: number
-    date: Date | string
+    date: string
     amount: number
     member: ReferenceFieldDTO
     account: ReferenceFieldDTO

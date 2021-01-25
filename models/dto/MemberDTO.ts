@@ -1,11 +1,11 @@
-import ReferenceFieldDTO from "./ReferenceFieldDTO";
+import ReferenceFieldDTO from "./ReferenceFieldDTO"
 
 interface MemberDTO
 {
     id: number
     name: string
     surname: string
-    dateOfBirth: Date | string
+    dateOfBirth: string
     address: string
     cellphoneNumber: string
     email: string
