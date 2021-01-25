@@ -36,10 +36,13 @@ jobs:
         
       - name: Build Project
         run: |
+          ls -l
           tsc
+          ls -l
         
       - name: Commit changes
         run: |
+          ls -l
           git add .
           git commit -m 'New release for version "${{ github.event.inputs.versionName }}"'
           
