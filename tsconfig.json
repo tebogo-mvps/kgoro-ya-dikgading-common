@@ -4,11 +4,13 @@
         "declaration": true,
         "sourceMap": true,
         "module": "commonjs",
-        "rootDir": "./src",
-        "outDir": "./dist",
         "esModuleInterop": true,
         "noImplicitAny": true,
         "strict": true
     },
-    "compileOnSave": true
+    "compileOnSave": true,
+    "include": [
+        "./mappers/**/*",
+        "./models/**/*"
+    ]
 }
