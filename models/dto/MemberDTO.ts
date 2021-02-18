@@ -2,6 +2,8 @@ import ReferenceFieldDTO from "./ReferenceFieldDTO"
 
 interface MemberDTO
 {
+    [key: string]: number | string | ReferenceFieldDTO[]
+    
     id: number
     name: string
     surname: string

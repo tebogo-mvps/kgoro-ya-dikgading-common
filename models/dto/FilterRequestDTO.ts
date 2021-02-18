@@ -1,5 +1,7 @@
 interface FilterRequestDTO
 {
+    [key: string]: number
+    
     page: number
     size: number
 }
